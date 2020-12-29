@@ -8,10 +8,10 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Chrome;
 
-namespace SeleniumTests
+namespace Integration_Testing
 {
     [TestFixture]
-    public class Test1
+    public class AuthenticationInLMSTest
     {
         private IWebDriver driver;
         private StringBuilder verificationErrors;
@@ -41,7 +41,7 @@ namespace SeleniumTests
         }
 
         [Test]
-        public void The1Test()
+        public void Test1()
         {
             driver.Navigate().GoToUrl("https://elp.duetbd.org/login/index.php");
             driver.FindElement(By.Id("username")).Click();
@@ -50,7 +50,7 @@ namespace SeleniumTests
             driver.FindElement(By.Id("login")).Click();
             driver.FindElement(By.Id("password")).Click();
             driver.FindElement(By.Id("password")).Clear();
-            driver.FindElement(By.Id("password")).SendKeys("********");  //Insert Password
+            driver.FindElement(By.Id("password")).SendKeys("********"); //Insert password
             driver.FindElement(By.Id("loginbtn")).Click();
             driver.FindElement(By.Id("action-menu-toggle-1")).Click();
             driver.FindElement(By.XPath("//div[@id='nav-drawer']/nav/ul/li[2]/a/div/div/span[2]")).Click();
